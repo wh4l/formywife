@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Özel Bir Mesaj</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+            animation: fadeIn 2s ease-in-out;
+            
+            /* Arka plan fotoğrafı için ayarlar */
+            background-image: url('arkaplan.jpg'); /* FOTOĞRAF DOSYASININ ADI */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85); /* Hafif şeffaf beyaz kutu */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #d14256;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .heart {
+            font-size: 3em;
+            color: #d14256;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .button {
+            background-color: #d14256;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #a32f3f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Birtanem Arım Balım Peteğim Ela'm</h1>
+        <p>
+            Ben bir eşeklik yaptım ve gerçekten hayvan gibi pişmanım. İstemeden güzel kalbini kırdım gerçekten çok üzgünüm, tamamen benim eşekliğim. Sana kötü şeyler hissettirdiğim ve düşündürdüğüm için çok üzgünüm ve çok özür dilerim. Hatamı da anladım ve bir daha böyle bişey olmayacak sana söz veriyorum. Bebegim lütfen beni affet🥺💗
+        </p>
+        <button class="button" onclick="showMessage()">Affeder Misin?</button>
+        <p id="message" style="margin-top: 20px; font-weight: bold; color: #d14256; display: none;">
+            özür dilerim hatunum ❤️
+        </p>
+    </div>
+
+    <script>
+        function showMessage() {
+            var messageElement = document.getElementById('message');
+            messageElement.style.display = 'block';
+            alert("❤️ Sen benim en kıymetlimsin ❤️");
+        }
+    </script>
+</body>
+</html>
