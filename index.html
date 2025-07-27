@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biricik Aşkım Ela'm</title>
+    <title>Ela'm İçin</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,8 +16,6 @@
             text-align: center;
             flex-direction: column;
             animation: fadeIn 2s ease-in-out;
-            
-            /* Arka plan fotoğrafı için ayarlar */
             background-image: url('arkaplan.jpg'); /* FOTOĞRAF DOSYASININ ADI */
             background-size: cover;
             background-repeat: no-repeat;
@@ -30,7 +28,7 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.85); /* Hafif şeffaf beyaz kutu */
+            background: rgba(255, 255, 255, 0.85);
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -82,22 +80,47 @@
 <body>
     <div class="container">
         <div class="heart">❤️</div>
-        <h1>Birtanem Arım Balım Peteğim Ela'm</h1>
-        <p>
-            Ben bir eşeklik yaptım ve gerçekten hayvan gibi pişmanım. İstemeden güzel kalbini kırdım gerçekten çok üzgünüm, tamamen benim eşekliğim. Sana kötü şeyler hissettirdiğim ve düşündürdüğüm için çok üzgünüm ve çok özür dilerim. Hatamı da anladım ve bir daha böyle bişey olmayacak sana söz veriyorum. Bebegim lütfen beni affet🥺💗
-        </p>
+        <h1 id="titleMessage"></h1>
+        <p id="mainMessage"></p>
         <button class="button" onclick="showMessage()">Affeder Misin?</button>
-        <p id="message" style="margin-top: 20px; font-weight: bold; color: #d14256; display: none;">
-            özür dilerim hatunum ❤️
+        <p id="apologyMessage" style="margin-top: 20px; font-weight: bold; color: #d14256; display: none;">
+            Biliyorum, her şey güzel olacak. Seni çok seviyorum!
         </p>
     </div>
 
     <script>
-        function showMessage() {
-            var messageElement = document.getElementById('message');
-            messageElement.style.display = 'block';
-            alert("❤️ Sen benim en kıymetlimsin ❤️");
+        function setTimeBasedMessage() {
+            var date = new Date();
+            var hour = date.getHours();
+            var title = "";
+            var message = "";
+
+            if (hour >= 6 && hour < 12) {
+                title = "Günaydın Aşkım 🥰";
+                message = "Güneşimle başladım güne, şimdi tek eksiğim senin günaydın mesajın. Günaydın sevgilim, seni çok seviyorum. ❤️";
+            } else if (hour >= 12 && hour < 18) {
+                title = "TÜNAYDIN ASKIM ❤️";
+                message = "Günün tam ortasında aklıma geldin. Umarım güzel bir gün geçiriyorsundur. Seni çok özledim, aklımdayken bir özür dilemek istedim. Lütfen affet...🥺";
+            } else if (hour >= 18 && hour < 22) {
+                title = "İyi Akşamlar Sevgilim 🌙";
+                message = "Bu akşam her şeyden daha çok, seninle olmak istedim. Sensiz bir akşam düşünmek bile zor. Seni çok seviyorum, çok özür dilerim. Bu eşekliğimi affet lütfen.🥺";
+            } else { // 22:00 - 06:00 arası
+                title = "İyi Geceler Ela'm ✨";
+                message = "Gecenin sessizliğinde seni düşünüyorum. Rüyamda sen ol, rüyandan önce de beni affet. Seni çok seviyorum ve çok özledim, iyi geceler birtanem. 💖";
+            }
+            
+            document.getElementById('titleMessage').innerHTML = title;
+            document.getElementById('mainMessage').innerHTML = message;
         }
+
+        function showMessage() {
+            var messageElement = document.getElementById('apologyMessage');
+            messageElement.style.display = 'block';
+            alert("Umarım bu küçük jest, özrümü kabul etmene yardımcı olur. ❤️");
+        }
+
+        // Sayfa yüklendiğinde fonksiyonu çalıştır
+        setTimeBasedMessage();
     </script>
 </body>
 </html>
